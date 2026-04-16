@@ -1,0 +1,10 @@
+# Audio and image assets — too large for GitHub (2.4GB+)
+# These live on each device and are distributed via thumbdrive or manual copy
+assets/uploads/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/

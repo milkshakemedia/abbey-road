@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crafted for Cunard — Abbey Road</title>
+  <link rel="stylesheet" href="css/player.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       SITE HEADER
+       Fixed at top. Abbey Road branding.
+  ====================================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <img src="assets/uploads/2025/10/Abbey_Road_New-Logo-scaled.png" alt="Abbey Road Studios" class="site-header__logo">
+      <span class="site-header__tagline">Crafted for Cunard</span>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       STICKY AUDIO BAR
+       Sits flush below the header. Contains tab switcher + three players.
+  ====================================================================== -->
+  <div class="audio-bar" id="audio-bar">
+
+    <!-- Tab buttons — one per studio -->
+    <div class="audio-bar__tabs" role="tablist">
+      <button class="tab-btn tab-btn--active" role="tab" data-tab="studio-one"   aria-selected="true">Studio One</button>
+      <button class="tab-btn"                 role="tab" data-tab="studio-two"   aria-selected="false">Studio Two</button>
+      <button class="tab-btn"                 role="tab" data-tab="studio-three" aria-selected="false">Studio Three</button>
+    </div>
+
+    <!-- Three player panels — only one visible at a time -->
+    <div class="player-panels">
+
+      <!-- STUDIO ONE -->
+      <div class="player-panel player-panel--active" id="panel-studio-one" role="tabpanel">
+        <div class="player" data-playlist="studio-one">
+
+          <div class="player__cover-wrap">
+            <img class="player__cover" src="" alt="Album art">
+          </div>
+
+          <div class="player__info">
+            <span class="player__now-playing-label">Now Playing</span>
+            <span class="player__title">—</span>
+            <span class="player__artist">—</span>
+          </div>
+
+          <div class="player__controls">
+            <button class="ctrl-btn ctrl-btn--prev" aria-label="Previous track">&#9664;&#9664;</button>
+            <button class="ctrl-btn ctrl-btn--play" aria-label="Play">&#9654;</button>
+            <button class="ctrl-btn ctrl-btn--next" aria-label="Next track">&#9654;&#9654;</button>
+          </div>
+
+          <div class="player__seek">
+            <span class="player__time player__time--current">0:00</span>
+            <div class="seek-bar" role="slider" aria-label="Seek">
+              <div class="seek-bar__progress"></div>
+              <div class="seek-bar__handle"></div>
+            </div>
+            <span class="player__time player__time--duration">0:00</span>
+          </div>
+
+          <div class="player__tracklist-wrap">
+            <ol class="player__tracklist"></ol>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STUDIO TWO -->
+      <div class="player-panel" id="panel-studio-two" role="tabpanel" hidden>
+        <div class="player" data-playlist="studio-two">
+
+          <div class="player__cover-wrap">
+            <img class="player__cover" src="" alt="Album art">
+          </div>
+
+          <div class="player__info">
+            <span class="player__now-playing-label">Now Playing</span>
+            <span class="player__title">—</span>
+            <span class="player__artist">—</span>
+          </div>
+
+          <div class="player__controls">
+            <button class="ctrl-btn ctrl-btn--prev" aria-label="Previous track">&#9664;&#9664;</button>
+            <button class="ctrl-btn ctrl-btn--play" aria-label="Play">&#9654;</button>
+            <button class="ctrl-btn ctrl-btn--next" aria-label="Next track">&#9654;&#9654;</button>
+          </div>
+
+          <div class="player__seek">
+            <span class="player__time player__time--current">0:00</span>
+            <div class="seek-bar" role="slider" aria-label="Seek">
+              <div class="seek-bar__progress"></div>
+              <div class="seek-bar__handle"></div>
+            </div>
+            <span class="player__time player__time--duration">0:00</span>
+          </div>
+
+          <div class="player__tracklist-wrap">
+            <ol class="player__tracklist"></ol>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STUDIO THREE -->
+      <div class="player-panel" id="panel-studio-three" role="tabpanel" hidden>
+        <div class="player" data-playlist="studio-three">
+
+          <div class="player__cover-wrap">
+            <img class="player__cover" src="" alt="Album art">
+          </div>
+
+          <div class="player__info">
+            <span class="player__now-playing-label">Now Playing</span>
+            <span class="player__title">—</span>
+            <span class="player__artist">—</span>
+          </div>
+
+          <div class="player__controls">
+            <button class="ctrl-btn ctrl-btn--prev" aria-label="Previous track">&#9664;&#9664;</button>
+            <button class="ctrl-btn ctrl-btn--play" aria-label="Play">&#9654;</button>
+            <button class="ctrl-btn ctrl-btn--next" aria-label="Next track">&#9654;&#9654;</button>
+          </div>
+
+          <div class="player__seek">
+            <span class="player__time player__time--current">0:00</span>
+            <div class="seek-bar" role="slider" aria-label="Seek">
+              <div class="seek-bar__progress"></div>
+              <div class="seek-bar__handle"></div>
+            </div>
+            <span class="player__time player__time--duration">0:00</span>
+          </div>
+
+          <div class="player__tracklist-wrap">
+            <ol class="player__tracklist"></ol>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /.player-panels -->
+  </div><!-- /#audio-bar -->
+
+  <!-- =====================================================================
+       MAIN CONTENT
+       Page content sits below the sticky bar.
+       padding-top is set dynamically by JS to match bar height.
+  ====================================================================== -->
+  <main class="main-content" id="main-content">
+    <div class="content-inner">
+      <h1>Crafted for Cunard</h1>
+      <p>An Abbey Road listening lounge experience for the Commodore Club.</p>
+    </div>
+  </main>
+
+  <!-- Scripts — Howler first, then our player -->
+  <script src="js/howler.min.js"></script>
+  <script src="js/player.js"></script>
+
+</body>
+</html>

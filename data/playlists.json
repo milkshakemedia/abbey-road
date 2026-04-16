@@ -1,0 +1,346 @@
+{
+  "playlists": [
+    {
+      "id": "studio-one",
+      "name": "Studio One",
+      "tracks": [
+        {
+          "title": "Duel of the Fates (From Star Wars The Phantom Menace)",
+          "artist": "John Williams",
+          "file": "assets/uploads/2025/09/02-John-Williams-Duel-of-the-Fates-From-Star-Wars-The-Phantom-MenaceScore-1.flac",
+          "cover": "assets/uploads/2025/09/02-John-Williams-Duel-of-the-Fates-From-Star-Wars-The-Phantom-MenaceScore-flac-image.jpg"
+        },
+        {
+          "title": "Raiders March (From Indiana Jones and the Raiders of the Lost Ark)",
+          "artist": "John Williams, Anne-Sophie Mutter, Wiener Philharmonic Orchestra",
+          "file": "assets/uploads/2025/09/13-Anne-Sophie-Mutter-Wiener-Philharmonic-Orchestra-John-Williams-Raiders-March-From-Indiana-Jones-and-the-Raiders-of-the-Lost-Ark.flac",
+          "cover": "assets/uploads/2025/09/13-Anne-Sophie-Mutter-Wiener-Philharmonic-Orchestra-John-Williams-Raiders-March-From-Indiana-Jones-and-the-Raiders-of-the-Lost-Ark-flac-image.jpg"
+        },
+        {
+          "title": "Goldfinger",
+          "artist": "Shirley Bassey",
+          "file": "assets/uploads/2025/10/12-Shirley-Bassey-Goldfinger.flac",
+          "cover": "assets/uploads/2025/10/11201288-3073917879471198.avif"
+        },
+        {
+          "title": "Goldfinger (Live)",
+          "artist": "Shirley Bassey",
+          "file": "assets/uploads/2025/09/01-Shirley-Bassey-Goldfinger-Live-Remastered.flac",
+          "cover": "assets/uploads/2025/09/01-Shirley-Bassey-Goldfinger-Live-Remastered-flac-image.jpg"
+        },
+        {
+          "title": "Lumos! (Hedwig's Theme)",
+          "artist": "John Williams",
+          "file": "assets/uploads/2025/09/01-Various-Artists-Lumos-Hedwigs-Theme-Album-Version.flac",
+          "cover": "assets/uploads/2025/09/01-Various-Artists-Lumos-Hedwigs-Theme-Album-Version-flac-image.jpg"
+        },
+        {
+          "title": "Now We Are Free (From the Gladiator 2 Soundtrack)",
+          "artist": "The Lyndhurst Orchestra, Gavin Greenaway, Hans Zimmer, Lisa Gerrard",
+          "file": "assets/uploads/2025/09/17-The-Lyndhurst-Orchestra-Gavin-Greenaway-Hans-Zimmer-Lisa-Gerrard-Now-We-Are-Free-Now-We-Are-Free-Album-Version.flac",
+          "cover": "assets/uploads/2025/09/17-The-Lyndhurst-Orchestra-Gavin-Greenaway-Hans-Zimmer-Lisa-Gerrard-Now-We-Are-Free-Now-We-Are-Free-Album-Version-flac-image.jpg"
+        },
+        {
+          "title": "Come Back to Us (From the 1917 Soundtrack)",
+          "artist": "Thomas Newman",
+          "file": "assets/uploads/2025/09/19-Thomas-Newman-Come-Back-to-Us.flac",
+          "cover": "assets/uploads/2025/09/19-Thomas-Newman-Come-Back-to-Us-flac-image.jpg"
+        },
+        {
+          "title": "Moon River (From 'Breakfast at Tiffany's')",
+          "artist": "Danny Williams",
+          "file": "assets/uploads/2025/09/01-Danny-Williams-Moon-River-From-Breakfast-at-Tiffanys.flac",
+          "cover": "assets/uploads/2025/09/51erd1sLR4L._UF10001000_QL80_.jpg"
+        },
+        {
+          "title": "Pure Imagination (Opening Titles Version)",
+          "artist": "Joby Talbot, Neil Hannon, The Cast of Wonka",
+          "file": "assets/uploads/2025/09/01-Joby-Talbot-Neil-Hannon-The-Cast-of-Wonka-Pure-Imagination-Opening-Titles-Version.flac",
+          "cover": "assets/uploads/2025/09/01-Joby-Talbot-Neil-Hannon-The-Cast-of-Wonka-Pure-Imagination-Opening-Titles-Version-flac-image.jpg"
+        },
+        {
+          "title": "Main Title (The Story Continues) (From Star Wars Return of the Jedi)",
+          "artist": "John Williams",
+          "file": "assets/uploads/2025/09/01-John-Williams-Main-Title-The-Story-Continues-From-Star-Wars-Return-of-the-JediScore.flac",
+          "cover": "assets/uploads/2025/09/large_cover-6.jpg"
+        },
+        {
+          "title": "A Gift Of A Thistle (From the Braveheart Soundtrack)",
+          "artist": "Choristers of Westminster Abbey, London Symphony Orchestra, James Horner",
+          "file": "assets/uploads/2025/09/02-Choristers-of-Westminster-Abbey-London-Symphony-Orchestra-James-Horner-Braveheart-Original-Sound-Track-A-Gift-Of-A-Thistle-From-Braveheart-Soundtrack.flac",
+          "cover": "assets/uploads/2025/09/02-Choristers-of-Westminster-Abbey-London-Symphony-Orchestra-James-Horner-Braveheart-Original-Sound-Track-A-Gift-Of-A-Thistle-From-Braveheart-Soundtrack-flac-image.jpg"
+        },
+        {
+          "title": "All Life Has Meaning (From Guardians of the Galaxy Vol. 3)",
+          "artist": "John Murphy",
+          "file": "assets/uploads/2025/09/26-John-Murphy-All-Life-Has-Meaning-From-Guardians-of-the-Galaxy-Vol.-3Score.flac",
+          "cover": "assets/uploads/2025/09/large_cover-3.jpg"
+        },
+        {
+          "title": "Writing's On The Wall (Instrumental From Spectre)",
+          "artist": "Thomas Newman",
+          "file": "assets/uploads/2025/09/15-Thomas-Newman-Writings-On-The-Wall-Instrumental-From-Spectre-Soundtrack.flac",
+          "cover": "assets/uploads/2025/09/15-Thomas-Newman-Writings-On-The-Wall-Instrumental-From-Spectre-Soundtrack-flac-image.jpg"
+        },
+        {
+          "title": "Fantastic Beasts: The Secrets of Dumbledore",
+          "artist": "James Newton Howard",
+          "file": "assets/uploads/2025/09/38-James-Newton-Howard-Fantastic-Beasts-The-Secrets-of-Dumbledore.flac",
+          "cover": "assets/uploads/2025/09/large_cover-scaled.jpg"
+        },
+        {
+          "title": "Cantina Band (From Star Wars A New Hope)",
+          "artist": "John Williams",
+          "file": "assets/uploads/2025/09/09-John-Williams-Cantina-Band-From-Star-Wars-A-New-HopeScore-1.flac",
+          "cover": "assets/uploads/2025/09/folder-5.jpg"
+        },
+        {
+          "title": "Main Title (From Aliens)",
+          "artist": "James Horner, London Symphony Orchestra",
+          "file": "assets/uploads/2025/09/01-James-Horner-London-Symphony-Orchestra-Main-Title-From-Aliens.flac",
+          "cover": "assets/uploads/2025/09/folder-1.jpg"
+        },
+        {
+          "title": "Main Title — Robocop",
+          "artist": "Basil Poledouris",
+          "file": "assets/uploads/2025/09/01-Basil-Poledouris-Main-Title.flac",
+          "cover": "assets/uploads/2025/09/01-Basil-Poledouris-Main-Title-flac-image.jpg"
+        },
+        {
+          "title": "Wakanda (From Black Panther)",
+          "artist": "Ludwig Göransson",
+          "file": "assets/uploads/2025/09/03-Ludwig-Goransson-Wakanda-From-Black-PantherScore.flac",
+          "cover": "assets/uploads/2025/09/03-Ludwig-Goransson-Wakanda-From-Black-PantherScore-flac-image.jpg"
+        },
+        {
+          "title": "Defying Gravity (From Wicked)",
+          "artist": "Wicked Movie Cast, Cynthia Erivo, Ariana Grande",
+          "file": "assets/uploads/2025/09/11-Wicked-Movie-Cast-Cynthia-Erivo-Ariana-Grande-Defying-Gravity.flac",
+          "cover": "assets/uploads/2025/09/11-Wicked-Movie-Cast-Cynthia-Erivo-Ariana-Grande-Defying-Gravity-flac-image.jpg"
+        },
+        {
+          "title": "Angel (From the Barbie Soundtrack)",
+          "artist": "PinkPantheress",
+          "file": "assets/uploads/2025/09/14-Various-Artists-Angel.flac",
+          "cover": "assets/uploads/2025/09/folder-10.jpg"
+        },
+        {
+          "title": "The Greatest Show (From the Greatest Showman Soundtrack)",
+          "artist": "Hugh Jackman, Keala Settle, Zac Efron, Zendaya, The Greatest Showman Ensemble",
+          "file": "assets/uploads/2025/09/01-Various-Artists-The-Greatest-Show-1.flac",
+          "cover": "assets/uploads/2025/09/large_cover-9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "studio-two",
+      "name": "Studio Two",
+      "tracks": [
+        {
+          "title": "Strawberry Fields Forever (Remastered 2009)",
+          "artist": "The Beatles",
+          "file": "assets/uploads/2025/09/08-The-Beatles-Strawberry-Fields-Forever-Remastered-2009.flac",
+          "cover": "assets/uploads/2025/09/08-The-Beatles-Strawberry-Fields-Forever-Remastered-2009-flac-image.jpg"
+        },
+        {
+          "title": "Bus Stop",
+          "artist": "The Hollies",
+          "file": "assets/uploads/2025/09/02-The-Hollies-Bus-Stop.flac",
+          "cover": "assets/uploads/2025/09/02-The-Hollies-Bus-Stop-flac-image.jpg"
+        },
+        {
+          "title": "Running Up That Hill (A Deal With God)",
+          "artist": "Kate Bush",
+          "file": "assets/uploads/2025/09/01-Kate-Bush-Running-Up-That-Hill-A-Deal-With-God.flac",
+          "cover": "assets/uploads/2025/09/folder-2.jpg"
+        },
+        {
+          "title": "Make Me Smile (Come Up and See Me) (2014 Remaster)",
+          "artist": "Steve Harley & Cockney Rebel",
+          "file": "assets/uploads/2025/09/06-Steve-Harley-Steve-Harley-Cockney-Rebel-Make-Me-Smile-Come-up-and-See-Me-2014-Remaster.flac",
+          "cover": "assets/uploads/2025/09/folder-24.jpg"
+        },
+        {
+          "title": "Move It (2000 Remaster)",
+          "artist": "Cliff Richard",
+          "file": "assets/uploads/2025/09/01-Cliff-Richard-Move-It-2000-Remaster.flac",
+          "cover": "assets/uploads/2025/09/01-Cliff-Richard-Move-It-2000-Remaster-flac-image.jpg"
+        },
+        {
+          "title": "Come Together (Remastered 2019)",
+          "artist": "The Beatles",
+          "file": "assets/uploads/2025/09/01-The-Beatles-Come-Together-Remastered.flac",
+          "cover": "assets/uploads/2025/09/large_cover-20.jpg"
+        },
+        {
+          "title": "Absolute Beginners (2002 Remaster)",
+          "artist": "David Bowie",
+          "file": "assets/uploads/2025/09/01-David-Bowie-Absolute-Beginners-2002-Remaster.flac",
+          "cover": "assets/uploads/2025/09/large_cover-13.jpg"
+        },
+        {
+          "title": "Can't Buy Me Love (Album Version)",
+          "artist": "Ella Fitzgerald",
+          "file": "assets/uploads/2025/09/03-Ella-Fitzgerald-Cant-Buy-Me-Love-Album-Version.flac",
+          "cover": "assets/uploads/2025/09/03-Ella-Fitzgerald-Cant-Buy-Me-Love-Album-Version-flac-image.jpg"
+        },
+        {
+          "title": "Open The Door, See What You Find",
+          "artist": "Noel Gallagher's High Flying Birds",
+          "file": "assets/uploads/2025/09/04-Noel-Gallaghers-High-Flying-Birds-Open-The-Door-See-What-You-Find.flac",
+          "cover": "assets/uploads/2025/09/large_cover-25.jpg"
+        },
+        {
+          "title": "No One's Watching Me (feat. Olivia Dean)",
+          "artist": "Ezra Collective",
+          "file": "assets/uploads/2025/09/10-Ezra-Collective-No-Ones-Watching-Me-feat.-Olivia-Dean.flac",
+          "cover": "assets/uploads/2025/09/10-Ezra-Collective-No-Ones-Watching-Me-feat-Olivia-Dean-flac-image.jpg"
+        },
+        {
+          "title": "Introvert",
+          "artist": "Little Simz",
+          "file": "assets/uploads/2025/09/01-Little-Simz-Introvert.flac",
+          "cover": "assets/uploads/2025/09/folder-13.jpg"
+        },
+        {
+          "title": "Sulk",
+          "artist": "Radiohead",
+          "file": "assets/uploads/2025/09/11-Radiohead-Sulk.flac",
+          "cover": "assets/uploads/2025/09/large_cover-22.jpg"
+        },
+        {
+          "title": "Apache",
+          "artist": "The Shadows",
+          "file": "assets/uploads/2025/09/03-The-Shadows-Apache.flac",
+          "cover": "assets/uploads/2025/09/03-The-Shadows-Apache-flac-image.jpg"
+        },
+        {
+          "title": "Penny Lane (Remastered 2017)",
+          "artist": "The Beatles",
+          "file": "assets/uploads/2025/09/02-The-Beatles-Penny-Lane-Remastered-2017.flac",
+          "cover": "assets/uploads/2025/09/large_cover-19.jpg"
+        },
+        {
+          "title": "Wall Of Eyes",
+          "artist": "The Smile",
+          "file": "assets/uploads/2025/09/01-The-Smile-Wall-Of-Eyes.flac",
+          "cover": "assets/uploads/2025/09/01-The-Smile-Wall-Of-Eyes-flac-image.jpg"
+        },
+        {
+          "title": "Perfect",
+          "artist": "Ed Sheeran",
+          "file": "assets/uploads/2025/09/05-Ed-Sheeran-Perfect.flac",
+          "cover": "assets/uploads/2025/09/folder-21.jpg"
+        }
+      ]
+    },
+    {
+      "id": "studio-three",
+      "name": "Studio Three",
+      "tracks": [
+        {
+          "title": "Juan Pablo",
+          "artist": "Ezra Collective",
+          "file": "assets/uploads/2025/09/02-Ezra-Collective-Juan-Pablo.flac",
+          "cover": "assets/uploads/2025/09/02-Ezra-Collective-Juan-Pablo-flac-image.jpg"
+        },
+        {
+          "title": "My Sweet Lord (2014 Remaster)",
+          "artist": "George Harrison",
+          "file": "assets/uploads/2025/09/02-George-Harrison-My-Sweet-Lord-2014-Remaster.flac",
+          "cover": "assets/uploads/2025/09/02-George-Harrison-My-Sweet-Lord-2014-Remaster-flac-image.jpg"
+        },
+        {
+          "title": "Viva Forever",
+          "artist": "Spice Girls",
+          "file": "assets/uploads/2025/09/09-Spice-Girls-Viva-Forever.flac",
+          "cover": "assets/uploads/2025/09/09-Spice-Girls-Viva-Forever-flac-image.jpg"
+        },
+        {
+          "title": "Get Down with It",
+          "artist": "Little Richard",
+          "file": "assets/uploads/2025/09/15-Little-Richard-Get-Down-with-It.flac",
+          "cover": "assets/uploads/2025/09/15-Little-Richard-Get-Down-with-It-flac-image.jpg"
+        },
+        {
+          "title": "Body and Soul",
+          "artist": "Tony Bennett",
+          "file": "assets/uploads/2025/09/03-Tony-Bennett-Body-and-Soul.flac",
+          "cover": "assets/uploads/2025/09/03-Tony-Bennett-Body-and-Soul-flac-image.jpg"
+        },
+        {
+          "title": "I Never Wanna Be Like You",
+          "artist": "Liam Gallagher",
+          "file": "assets/uploads/2025/09/15-Liam-Gallagher-I-Never-Wanna-Be-Like-You.flac",
+          "cover": "assets/uploads/2025/09/15-Liam-Gallagher-I-Never-Wanna-Be-Like-You-flac-image.jpg"
+        },
+        {
+          "title": "Deeper Underground (Remastered 2006)",
+          "artist": "Jamiroquai",
+          "file": "assets/uploads/2025/09/10-Jamiroquai-Deeper-Underground-Remastered-2006.flac",
+          "cover": "assets/uploads/2025/09/10-Jamiroquai-Deeper-Underground-Remastered-2006-flac-image.jpg"
+        },
+        {
+          "title": "Money",
+          "artist": "Pink Floyd",
+          "file": "assets/uploads/2025/09/06-Pink-Floyd-Money.flac",
+          "cover": "assets/uploads/2025/09/06-Pink-Floyd-Money-flac-image.jpg"
+        },
+        {
+          "title": "Time of the Season (Mono Remastered)",
+          "artist": "The Zombies",
+          "file": "assets/uploads/2025/09/12-The-Zombies-Time-of-the-Season-Mono-Remastered.flac",
+          "cover": "assets/uploads/2025/09/12-The-Zombies-Time-of-the-Season-Mono-Remastered-flac-image.jpg"
+        },
+        {
+          "title": "Sincerity Is Scary",
+          "artist": "The 1975",
+          "file": "assets/uploads/2025/09/07-The-1975-Sincerity-Is-Scary.flac",
+          "cover": "assets/uploads/2025/09/07-The-1975-Sincerity-Is-Scary-flac-image.jpg"
+        },
+        {
+          "title": "Pink + White",
+          "artist": "Frank Ocean",
+          "file": "assets/uploads/2025/09/03-Frank-Ocean-Pink-White.flac",
+          "cover": "assets/uploads/2025/09/03-Frank-Ocean-Pink-White-flac-image.jpg"
+        },
+        {
+          "title": "Your Mother Should Know (Remastered 2009)",
+          "artist": "The Beatles",
+          "file": "assets/uploads/2025/09/05-The-Beatles-Your-Mother-Should-Know-Remastered-2009.flac",
+          "cover": "assets/uploads/2025/09/folder-37.jpg"
+        },
+        {
+          "title": "Eleanor Rigby (2022 Mix)",
+          "artist": "The Beatles",
+          "file": "assets/uploads/2025/09/02-The-Beatles-Eleanor-Rigby-2022-Mix.flac",
+          "cover": "assets/uploads/2025/09/folder-36.jpg"
+        },
+        {
+          "title": "My Iron Lung",
+          "artist": "Radiohead",
+          "file": "assets/uploads/2025/09/01-Radiohead-My-Iron-Lung.flac",
+          "cover": "assets/uploads/2025/09/01-Radiohead-My-Iron-Lung-flac-image.jpg"
+        },
+        {
+          "title": "What The Water Gave Me",
+          "artist": "Florence + The Machine",
+          "file": "assets/uploads/2025/09/03-Florence-The-Machine-What-The-Water-Gave-Me.flac",
+          "cover": "assets/uploads/2025/09/03-Florence-The-Machine-What-The-Water-Gave-Me-flac-image.jpg"
+        },
+        {
+          "title": "Jeun Ko Ku (Chop 'n Quench)",
+          "artist": "Fela Kuti",
+          "file": "assets/uploads/2026/04/02-Fela-Kuti-Jeun-Ko-Ku-Chop-n-Quench.flac",
+          "cover": "assets/uploads/2026/04/01-Fela-Kuti-Alu-Jon-Jonki-Jon-flac-image.jpg"
+        },
+        {
+          "title": "Alu Jon Jonki Jon",
+          "artist": "Fela Kuti",
+          "file": "assets/uploads/2026/04/01-Fela-Kuti-Alu-Jon-Jonki-Jon.flac",
+          "cover": "assets/uploads/2026/04/01-Fela-Kuti-Alu-Jon-Jonki-Jon-flac-image.jpg"
+        }
+      ]
+    }
+  ]
+}
