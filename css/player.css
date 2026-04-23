@@ -479,3 +479,101 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE — ≤ 767px  (small tablets, portrait mode)
+   Drop the tracklist column. Grid becomes 4 cols, tracklist wraps to row 3.
+
+   Row 1: [cover] [info          ] [controls] [seek]
+   Row 2: [cover] [              ] [controls] [seek]
+   Row 3: [tracklist — full width                  ]
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .player {
+    grid-template-columns: 56px 1fr auto auto;
+  }
+
+  .player__info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .player__controls {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .player__seek {
+    grid-column: 4;
+    grid-row: 1 / 3;
+    min-width: 120px;
+    width: auto;
+    max-width: none;
+  }
+
+  .player__tracklist-wrap {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    border-left: none;
+    border-top: 1px solid #444444;
+    padding-left: 0.25rem;
+    padding-top: 0.4rem;
+    max-height: 110px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE — ≤ 479px  (phones / very small viewports)
+   Seek bar drops to its own full-width row. Tracklist hidden.
+
+   Row 1: [cover] [info          ] [controls]
+   Row 2: [cover] [seek — full width         ]
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 479px) {
+
+  .tab-btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .player {
+    grid-template-columns: 56px 1fr auto;
+  }
+
+  .player__cover-wrap {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .player__info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .player__controls {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .player__seek {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+    padding-top: 0.4rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .player__tracklist-wrap {
+    display: none;
+  }
+}

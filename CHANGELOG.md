@@ -53,7 +53,7 @@ cp -r "app/public/wp-content/uploads/2026" "../abbey-road-v2/assets/uploads/"
 - ✅ Track list — click any row to jump to that track
 - ✅ Seek bar — click to jump, updates every 250ms while playing
 - ✅ Cover art — all images copied and loading
-- ⬜ Layout fix — player info + tracklist collapse at narrower viewports
+- ✅ Layout fix — responsive breakpoints at 767px and 479px (see Session 2)
 - ⬜ Full audio copy — 59 FLACs need copying (one command above)
 - ⬜ Styling pass — audit every element against the live site
 - ⬜ FLAC / browser testing — confirm Chrome, Edge, Safari; add MP3 fallback if needed
@@ -61,5 +61,18 @@ cp -r "app/public/wp-content/uploads/2026" "../abbey-road-v2/assets/uploads/"
 - ⬜ Video player (Plyr.js) — added after audio is solid
 
 ### Known issues / next session priorities
-1. **Grid layout collapses narrow** — at viewport widths below ~900px the player info section and tracklist go off-screen. Needs a responsive layout pass (likely switching from a single-row grid to a two-row stacked layout below a breakpoint).
-2. **Audio files not copied yet** — all tracks except Moon River will show "Could not load track". Run the copy command above to fix this.
+1. **Audio files not copied yet** — all tracks except Moon River will show "Could not load track". Run the copy command above to fix this.
+
+---
+
+## 2026-04-23 — Session 2: Responsive Layout
+
+### What changed
+Added two `@media` breakpoints to `css/player.css` (no HTML or JS changes):
+
+| Breakpoint | Layout |
+|---|---|
+| `≤ 767px` | 4-column grid; tracklist drops to a full-width row below controls |
+| `≤ 479px` | 3-column grid; seek bar moves to its own full-width row; tracklist hidden |
+
+Tested at 912px (Surface target), 700px, and 400px via browser preview. Figma file confirmed the target canvas is 912px wide.
