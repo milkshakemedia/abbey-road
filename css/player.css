@@ -67,6 +67,7 @@ button {
   gap: 1rem;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
 }
 
 .site-header__logo {
@@ -75,6 +76,9 @@ button {
 }
 
 .site-header__tagline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -154,41 +158,41 @@ button {
 
 .player {
   display: grid;
-  grid-template-columns: 56px 1fr auto auto 1fr;
+  grid-template-columns: 100px 1fr auto auto auto;
   grid-template-rows: auto auto;
   gap: 0 1rem;
   align-items: center;
-  padding: 0.6rem 1rem;
+  padding: 0.3rem 1rem 0;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 /*
-  Grid layout (2 rows, 5 columns):
-  Row 1: [cover] [info] [controls] [seek] [tracklist-wrap]
-  Row 2: cover spans into row 2 to fill height; tracklist spans too
+  Grid layout:
+  Row 1: [cover] [info] [controls] [seek]
+  Row 2: [tracklist — full width across all columns]
 */
 
 .player__cover-wrap {
   grid-column: 1;
-  grid-row: 1 / 3;
-  width: 56px;
-  height: 56px;
+  grid-row: 1;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
 }
 
 .player__cover {
-  width: 56px;
-  height: 56px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 2px;
   background: #333333;
-  color: transparent; /* hides alt text when image fails to load */
+  color: transparent;
 }
 
 .player__info {
   grid-column: 2;
-  grid-row: 1 / 3;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,10 +213,26 @@ button {
   font-size: 13.5px;
   font-weight: 600;
   color: #ffffff;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.player__title > span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.player__title--scrolling > span {
+  animation: title-marquee var(--scroll-duration, 12s) linear infinite;
+}
+
+.player__title--scrolling > span:hover {
+  animation-play-state: paused;
+}
+
+@keyframes title-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(var(--scroll-offset, -50%)); }
 }
 
 .player__artist {
@@ -230,7 +250,7 @@ button {
 
 .player__controls {
   grid-column: 3;
-  grid-row: 1 / 3;
+  grid-row: 1;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -279,17 +299,17 @@ button {
 
 .player__seek {
   grid-column: 4;
-  grid-row: 1 / 3;
+  grid-row: 1;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  min-width: 180px;
-  max-width: 280px;
-  width: 220px;
+  gap: 0.5rem;
+  min-width: 160px;
+  max-width: 240px;
+  width: 200px;
 }
 
 .player__time {
-  font-size: 12px;
+  font-size: 11px;
   color: #888888;
   font-family: Arial, Helvetica, sans-serif;
   white-space: nowrap;
@@ -299,15 +319,15 @@ button {
 .seek-bar {
   position: relative;
   flex: 1;
-  height: 4px;
+  height: 3px;
   background: #444444;
   border-radius: 2px;
   cursor: pointer;
 }
 
 .seek-bar:hover {
-  height: 6px; /* slightly taller on hover for easier grabbing */
-  margin-top: -1px; /* keep vertically centred */
+  height: 5px;
+  margin-top: -1px;
 }
 
 .seek-bar__progress {
@@ -340,56 +360,134 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   TRACKLIST
-   Scrollable, max ~4 tracks visible. Bold scrollbar for older audience.
+   VOLUME
    -------------------------------------------------------------------------- */
 
-.player__tracklist-wrap {
+.player__volume {
   grid-column: 5;
-  grid-row: 1 / 3;
-  max-height: 160px;
-  overflow-y: scroll;
-  border-left: 1px solid #444444;
-  padding-left: 0.75rem;
-  /* Custom scrollbar */
-  scrollbar-width: 14px;
-  scrollbar-color: #aaaaaa #2a2a2a;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.volume-icon {
+  color: #aaaaaa;
+  flex-shrink: 0;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #ff6b35 var(--vol, 80%), #444444 var(--vol, 80%));
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  flex-shrink: 0;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   TRACKLIST — full-width below player, 1 track per line
+   -------------------------------------------------------------------------- */
+
+.player__tracklist-outer {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #383838;
+}
+
+.player__tracklist-wrap {
+  max-height: 130px;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .player__tracklist-wrap::-webkit-scrollbar {
-  width: 14px;
+  display: none;
 }
 
-.player__tracklist-wrap::-webkit-scrollbar-track {
-  background: #2a2a2a;
+/* Up / down scroll arrows */
+.tracklist-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.65;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
 }
 
-.player__tracklist-wrap::-webkit-scrollbar-thumb {
-  background: #aaaaaa;
-  border-radius: 7px;
-  border: 2px solid #2a2a2a;
+.tracklist-arrow:hover:not(:disabled) {
+  opacity: 1;
 }
 
-.player__tracklist-wrap::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
+.tracklist-arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.tracklist-arrow::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid #cccccc;
+  border-top: 1.5px solid #cccccc;
+}
+
+.tracklist-arrow--up::before {
+  transform: rotate(-45deg) translate(1px, 1px);
+}
+
+.tracklist-arrow--down::before {
+  transform: rotate(135deg) translate(1px, 1px);
 }
 
 .player__tracklist {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .tracklist-item {
   display: grid;
-  grid-template-columns: 24px 1fr;
+  grid-template-columns: 22px 1fr;
   grid-template-rows: auto auto;
-  gap: 0 0.4rem;
-  padding: 0.35rem 0.5rem 0.35rem 0;
+  gap: 0 0.3rem;
+  padding: 0.22rem 0.75rem 0.22rem 0;
   cursor: pointer;
   border-radius: 2px;
   transition: background 0.1s;
+  min-width: 0;
 }
 
 .tracklist-item:hover {
@@ -401,16 +499,16 @@ button {
   grid-row: 1 / 3;
   display: flex;
   align-items: center;
-  font-size: 13.5px;
-  color: #888888;
-  font-family: Arial, Helvetica, sans-serif;
   justify-content: center;
+  font-size: 12px;
+  color: #666666;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .tracklist-item__title {
   grid-column: 2;
   grid-row: 1;
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: #999999;
   font-family: Arial, Helvetica, sans-serif;
   white-space: nowrap;
@@ -421,12 +519,46 @@ button {
 .tracklist-item__artist {
   grid-column: 2;
   grid-row: 2;
-  font-size: 12px;
-  color: #666666;
+  font-size: 11px;
+  color: #555555;
   font-family: Arial, Helvetica, sans-serif;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Next track — midpoint between orange and grey (#c47a5f) */
+.tracklist-item--next {
+  border-left: 2px solid #c47a5f;
+  padding-left: calc(0.75rem - 2px);
+}
+
+.tracklist-item--next .tracklist-item__num {
+  color: #c47a5f;
+}
+
+.tracklist-item--next .tracklist-item__title {
+  color: #999999;
+}
+
+.tracklist-item--next .tracklist-item__artist::before {
+  content: '▸ Next · ';
+  color: #c47a5f;
+  font-size: 11px;
+}
+
+/* Two tracks ahead — 75% toward grey (#a68173) */
+.tracklist-item--next-2 {
+  border-left: 2px solid #a68173;
+  padding-left: calc(0.75rem - 2px);
+}
+
+.tracklist-item--next-2 .tracklist-item__num {
+  color: #a68173;
+}
+
+.tracklist-item--next-2 .tracklist-item__artist {
+  color: #666666;
 }
 
 /* Active track — highlighted in orange */
@@ -483,11 +615,7 @@ a:hover {
 
 /* --------------------------------------------------------------------------
    RESPONSIVE — ≤ 767px  (small tablets, portrait mode)
-   Drop the tracklist column. Grid becomes 4 cols, tracklist wraps to row 3.
-
-   Row 1: [cover] [info          ] [controls] [seek]
-   Row 2: [cover] [              ] [controls] [seek]
-   Row 3: [tracklist — full width                  ]
+   Seek bar narrows; tracklist drops to 2 columns.
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
@@ -496,36 +624,14 @@ a:hover {
     padding: 0.6rem 1.2rem;
   }
 
-  .player {
-    grid-template-columns: 56px 1fr auto auto;
-  }
-
-  .player__info {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .player__controls {
-    grid-column: 3;
-    grid-row: 1 / 3;
-  }
-
   .player__seek {
-    grid-column: 4;
-    grid-row: 1 / 3;
     min-width: 120px;
     width: auto;
     max-width: none;
   }
 
-  .player__tracklist-wrap {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    border-left: none;
-    border-top: 1px solid #444444;
-    padding-left: 0.25rem;
-    padding-top: 0.4rem;
-    max-height: 110px;
+  .player__tracklist {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -546,12 +652,12 @@ a:hover {
   }
 
   .player {
-    grid-template-columns: 56px 1fr auto;
+    grid-template-columns: 100px 1fr auto;
   }
 
   .player__cover-wrap {
     grid-column: 1;
-    grid-row: 1 / 3;
+    grid-row: 1;
   }
 
   .player__info {
@@ -572,6 +678,10 @@ a:hover {
     max-width: none;
     padding-top: 0.4rem;
     padding-bottom: 0.2rem;
+  }
+
+  .player__volume {
+    display: none;
   }
 
   .player__tracklist-wrap {

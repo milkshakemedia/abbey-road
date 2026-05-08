@@ -55,14 +55,21 @@ class Player {
     this.nextBtn      = panelEl.querySelector('.ctrl-btn--next');
     this.currentTimeEl= panelEl.querySelector('.player__time--current');
     this.durationEl   = panelEl.querySelector('.player__time--duration');
-    this.seekBarEl    = panelEl.querySelector('.seek-bar');
-    this.seekProgress = panelEl.querySelector('.seek-bar__progress');
-    this.seekHandle   = panelEl.querySelector('.seek-bar__handle');
-    this.tracklistEl  = panelEl.querySelector('.player__tracklist');
+    this.seekBarEl      = panelEl.querySelector('.seek-bar');
+    this.seekProgress   = panelEl.querySelector('.seek-bar__progress');
+    this.seekHandle     = panelEl.querySelector('.seek-bar__handle');
+    this.tracklistEl    = panelEl.querySelector('.player__tracklist');
+    this.tracklistWrap  = panelEl.querySelector('.player__tracklist-wrap');
+    this.arrowUp        = panelEl.querySelector('.tracklist-arrow--up');
+    this.arrowDown      = panelEl.querySelector('.tracklist-arrow--down');
+    this.volumeSlider   = panelEl.querySelector('.volume-slider');
+    this.volume         = 0.8;
 
     this._buildTracklist();
     this._loadTrack(0, false); // Load first track but don't auto-play
     this._bindControls();
+    this._bindTracklistArrows();
+    this._bindVolume();
   }
 
   // -------------------------------------------------------------------------
@@ -105,7 +112,7 @@ class Player {
 
     // Update static UI immediately — don't wait for audio to load
     this.coverEl.src     = track.cover;
-    this.titleEl.textContent  = track.title;
+    this._setTitle(track.title);
     this.artistEl.textContent = track.artist;
     this.currentTimeEl.textContent = '0:00';
     this.durationEl.textContent    = '0:00';
@@ -118,6 +125,7 @@ class Player {
       src:    [track.file],
       format: ['flac'],
       html5:  true,   // stream from disk rather than loading entire file into memory
+      volume: this.volume,
 
       onload: () => {
         // Duration is available once loaded
@@ -155,6 +163,7 @@ class Player {
 
       onloaderror: (id, err) => {
         console.error('Track load error:', track.file, err);
+        this.titleEl.classList.remove('player__title--scrolling');
         this.titleEl.textContent = '⚠ Could not load track';
       }
     });
@@ -197,6 +206,53 @@ class Player {
       ? this.currentIndex + 1
       : this.currentIndex;
     this._loadTrack(newIndex, this.isPlaying);
+  }
+
+  // -------------------------------------------------------------------------
+  // VOLUME — range slider drives Howler volume; fill tracks position
+  // -------------------------------------------------------------------------
+
+  _bindVolume() {
+    const slider = this.volumeSlider;
+    if (!slider) return;
+
+    const sync = () => {
+      slider.style.setProperty('--vol', `${slider.value}%`);
+      this.volume = slider.value / 100;
+      if (this.howl) this.howl.volume(this.volume);
+    };
+
+    slider.addEventListener('input', sync);
+    // Set initial fill
+    slider.style.setProperty('--vol', `${slider.value}%`);
+  }
+
+  // -------------------------------------------------------------------------
+  // TRACKLIST ARROWS — scroll one track at a time, keep buttons in sync
+  // -------------------------------------------------------------------------
+
+  _bindTracklistArrows() {
+    const wrap = this.tracklistWrap;
+    const up   = this.arrowUp;
+    const down = this.arrowDown;
+    if (!wrap || !up || !down) return;
+
+    const scroll = (dir) => {
+      const itemH = wrap.querySelector('.tracklist-item')?.offsetHeight || 44;
+      wrap.scrollBy({ top: dir * itemH, behavior: 'smooth' });
+    };
+
+    const syncArrows = () => {
+      up.disabled   = wrap.scrollTop <= 0;
+      down.disabled = wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 1;
+    };
+
+    up.addEventListener('click',   () => scroll(-1));
+    down.addEventListener('click', () => scroll(1));
+    wrap.addEventListener('scroll', syncArrows, { passive: true });
+
+    // Set initial state after content renders
+    requestAnimationFrame(syncArrows);
   }
 
   // Called by tab switcher when this panel is deactivated
@@ -247,6 +303,44 @@ class Player {
   // UI HELPERS
   // -------------------------------------------------------------------------
 
+  _setTitle(title) {
+    this._titleGen = (this._titleGen || 0) + 1;
+    const gen = this._titleGen;
+
+    this.titleEl.classList.remove('player__title--scrolling');
+    this.titleEl.style.removeProperty('--scroll-duration');
+    this.titleEl.style.removeProperty('--scroll-offset');
+    this.titleEl.innerHTML = '';
+
+    const inner = document.createElement('span');
+    inner.textContent = title;
+    this.titleEl.appendChild(inner);
+
+    requestAnimationFrame(() => {
+      if (gen !== this._titleGen) return; // track changed before paint
+      const containerWidth = this.titleEl.offsetWidth;
+      const textWidth = inner.scrollWidth;
+
+      if (textWidth > containerWidth) {
+        const GAP = 64; // px gap between the two copies
+        const speed = 50; // px per second
+        const loopWidth = textWidth + GAP;
+        const duration = (loopWidth / speed).toFixed(1);
+
+        // Build: [title][spacer][title] — translate by -loopWidth to loop seamlessly
+        const spacer = document.createElement('span');
+        spacer.style.display = 'inline-block';
+        spacer.style.width = `${GAP}px`;
+        inner.appendChild(spacer);
+        inner.appendChild(document.createTextNode(title));
+
+        this.titleEl.style.setProperty('--scroll-duration', `${duration}s`);
+        this.titleEl.style.setProperty('--scroll-offset', `-${loopWidth}px`);
+        this.titleEl.classList.add('player__title--scrolling');
+      }
+    });
+  }
+
   _updatePlayButton(playing) {
     // Unicode play ▶ / pause ⏸
     this.playBtn.innerHTML = playing ? '&#9646;&#9646;' : '&#9654;';
@@ -256,7 +350,9 @@ class Player {
   _highlightActiveTrack(index) {
     const items = this.tracklistEl.querySelectorAll('.tracklist-item');
     items.forEach((item, i) => {
-      item.classList.toggle('tracklist-item--active', i === index);
+      item.classList.toggle('tracklist-item--active',  i === index);
+      item.classList.toggle('tracklist-item--next',    i === index + 1);
+      item.classList.toggle('tracklist-item--next-2',  i === index + 2);
     });
 
     // Scroll active track into view within the tracklist
