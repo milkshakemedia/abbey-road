@@ -114,6 +114,7 @@ button {
 .tab-btn {
   padding: 0.6rem 2.2rem;
   font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #aaaaaa;
