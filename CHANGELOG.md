@@ -125,12 +125,20 @@ Deployment was assumed to be "no server, ever — just open `index.html`." That 
 ### ⚠️ Workflow change — how to add/remove tracks
 **Edit `data/playlists.js`, not `data/playlists.json`** (the `.json` file has been deleted). The content and structure are identical — it's the same object, just prefixed with `const PLAYLISTS = ` and suffixed with `;`. Nothing else about editing track entries changes.
 
+### Tab row + cover art alignment
+Follow-up polish, same session, found via wide-viewport testing:
+- `.audio-bar__tabs` now shares `.player`'s `max-width: 1400px; margin: 0 auto;` — the tab row no longer stretches full-bleed past the player content on wide screens
+- Album cover resized from `100px` to `145px` square to match the rendered width of the "Studio One" tab (measured via computed styles, not eyeballed)
+- Cover bleeds flush with the tab row's true left edge (`margin-left: -1rem`, cancelling `.player`'s own left padding) so cover art and the active tab's highlight/underline share one continuous left edge
+- `.tab-btn:first-child` left padding bumped `0.5rem → 1rem` to match `.player`'s own left padding — this incidentally grew the tab's total width by 8px, which is why the cover went `137px → 145px` in a follow-up fix, to keep both edges flush
+
 ### Status
 - ✅ Full audio copy — all 59 FLACs copied into `assets/uploads/`
 - ✅ Single-column tracklist with scroll arrows
 - ✅ Volume control
 - ✅ `file://` compatibility — playlist data loads without a server
-- ⬜ Styling pass — audit every element against the live site
+- ✅ Tab row / cover art alignment — flush on both edges at all viewport widths
+- ⬜ Styling pass — audit every remaining element against the live site
 - ⬜ FLAC / browser testing on the actual tablet browser; add MP3 fallback if needed
 - ⬜ Page content — replace placeholder copy with real Cunard content
 - ⬜ Video player (Plyr.js) — added after audio is solid
