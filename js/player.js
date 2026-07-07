@@ -3,7 +3,7 @@
  * Built on Howler.js for reliable cross-browser FLAC playback.
  *
  * ARCHITECTURE (three layers):
- *   1. Data  — playlists.json, loaded once at startup
+ *   1. Data  — playlists.js (PLAYLISTS global), loaded once at startup
  *   2. Engine — one Howl instance per track (created on demand, destroyed on skip)
  *   3. UI    — Player class manages one panel's DOM; tab switcher coordinates all three
  *
@@ -452,15 +452,7 @@ function initBarPositioning() {
 // ---------------------------------------------------------------------------
 
 async function init() {
-  let data;
-
-  try {
-    const response = await fetch('data/playlists.json');
-    data = await response.json();
-  } catch (err) {
-    console.error('Could not load playlists.json:', err);
-    return;
-  }
+  const data = PLAYLISTS;
 
   // Build a map of playlistId → Player instance
   const players = {};

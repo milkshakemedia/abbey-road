@@ -1,4 +1,4 @@
-{
+const PLAYLISTS = {
   "playlists": [
     {
       "id": "studio-one",
@@ -344,3 +344,4 @@
     }
   ]
 }
+;

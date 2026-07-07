@@ -3,6 +3,8 @@
 A running log of what was built, why, and what's next.
 Cross-reference with `CLAUDE.md` in the v1.5 WordPress project for design decisions and styling specs that carry over.
 
+> **Quick reference — adding or removing tracks:** edit `data/playlists.js`, **not** `data/playlists.json` (that file no longer exists — see Session 4, 2026-07-07). Same JSON structure, just wrapped in `const PLAYLISTS = { ... };`.
+
 ---
 
 ## 2026-04-16 — Session 1: Foundation + Working Audio Player
@@ -18,7 +20,7 @@ v2.0 is a full rebuild of the Crafted for Cunard site as **static HTML + JavaScr
 
 | File | Purpose |
 |------|---------|
-| `data/playlists.json` | All track data — 54 tracks across 3 playlists, extracted directly from the WordPress database (`local.sql`). Single source of truth. Edit this to add/remove tracks. |
+| `data/playlists.json` | All track data — 54 tracks across 3 playlists, extracted directly from the WordPress database (`local.sql`). Single source of truth. Edit this to add/remove tracks. *(Replaced by `data/playlists.js` in Session 4 — see below.)* |
 | `js/howler.min.js` | Howler.js audio library, bundled locally. No CDN — works fully offline. |
 | `js/player.js` | Custom player engine. Loads `playlists.json`, creates one `Player` instance per studio tab, handles play/pause/next/prev/seek/auto-advance and tracklist UI. |
 | `css/player.css` | Dark theme styles. Matches the live WordPress site: `#ff6b35` accent, Georgia serif body, 13.5px player text, 14px scrollbar. |
@@ -108,5 +110,27 @@ Follow-up polish, same session:
 - ✅ Volume control
 - ⬜ Styling pass — audit every element against the live site
 - ⬜ FLAC / browser testing — confirm Chrome, Edge, Safari; add MP3 fallback if needed
+- ⬜ Page content — replace placeholder copy with real Cunard content
+- ⬜ Video player (Plyr.js) — added after audio is solid
+
+---
+
+## 2026-07-07 — Session 4: `file://` Compatibility Fix (⚠️ changes how you add tracks)
+
+### What changed
+Deployment was assumed to be "no server, ever — just open `index.html`." That assumption was never actually tested: `js/player.js` loaded track data with `fetch('data/playlists.json')`, and Chrome/Edge (Chromium) **block `fetch` of local files opened via `file://`** as a CORS restriction. On the actual tablet, opening `index.html` directly would have shown a blank player with "Could not load playlists.json" in the console — this only worked in dev because `npx serve` serves over `http://`, which masked the bug.
+
+**Fix:** `data/playlists.json` → **`data/playlists.js`**, same JSON content wrapped as `const PLAYLISTS = { ... };`, loaded via a plain `<script src="data/playlists.js">` tag instead of `fetch`. Script tags load fine over `file://`; JSON fetches don't. Verified working in preview: play/pause, tab switching, and full tracklist all confirmed with the new loader.
+
+### ⚠️ Workflow change — how to add/remove tracks
+**Edit `data/playlists.js`, not `data/playlists.json`** (the `.json` file has been deleted). The content and structure are identical — it's the same object, just prefixed with `const PLAYLISTS = ` and suffixed with `;`. Nothing else about editing track entries changes.
+
+### Status
+- ✅ Full audio copy — all 59 FLACs copied into `assets/uploads/`
+- ✅ Single-column tracklist with scroll arrows
+- ✅ Volume control
+- ✅ `file://` compatibility — playlist data loads without a server
+- ⬜ Styling pass — audit every element against the live site
+- ⬜ FLAC / browser testing on the actual tablet browser; add MP3 fallback if needed
 - ⬜ Page content — replace placeholder copy with real Cunard content
 - ⬜ Video player (Plyr.js) — added after audio is solid
