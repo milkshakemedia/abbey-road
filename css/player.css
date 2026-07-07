@@ -161,7 +161,7 @@ button {
 
 .player {
   display: grid;
-  grid-template-columns: 137px 1fr auto auto auto;
+  grid-template-columns: 145px 1fr auto auto auto;
   grid-template-rows: auto auto;
   gap: 0 1rem;
   align-items: center;
@@ -179,15 +179,15 @@ button {
 .player__cover-wrap {
   grid-column: 1;
   grid-row: 1;
-  width: 137px; /* matches the rendered width of the Studio One tab */
-  height: 137px;
+  width: 145px; /* matches the rendered width of the Studio One tab */
+  height: 145px;
   flex-shrink: 0;
   margin-left: -1rem; /* bleed flush with the tab row's left edge, cancelling .player's own left padding */
 }
 
 .player__cover {
-  width: 137px;
-  height: 137px;
+  width: 145px;
+  height: 145px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 2px;
