@@ -108,6 +108,8 @@ button {
 
 .audio-bar__tabs {
   display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
   border-bottom: 1px solid #444444;
 }
 
@@ -124,7 +126,7 @@ button {
 }
 
 .tab-btn:first-child {
-  padding-left: 0.5rem; /* align with player content below */
+  padding-left: 1rem; /* matches .player's left padding, so text aligns with cover art below */
 }
 
 .tab-btn:last-child {
@@ -159,7 +161,7 @@ button {
 
 .player {
   display: grid;
-  grid-template-columns: 100px 1fr auto auto auto;
+  grid-template-columns: 137px 1fr auto auto auto;
   grid-template-rows: auto auto;
   gap: 0 1rem;
   align-items: center;
@@ -177,14 +179,16 @@ button {
 .player__cover-wrap {
   grid-column: 1;
   grid-row: 1;
-  width: 100px;
-  height: 100px;
+  width: 137px; /* matches the rendered width of the Studio One tab */
+  height: 137px;
   flex-shrink: 0;
+  margin-left: -1rem; /* bleed flush with the tab row's left edge, cancelling .player's own left padding */
 }
 
 .player__cover {
-  width: 100px;
-  height: 100px;
+  width: 137px;
+  height: 137px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 2px;
   background: #333333;
