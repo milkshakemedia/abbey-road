@@ -76,3 +76,37 @@ Added two `@media` breakpoints to `css/player.css` (no HTML or JS changes):
 | `≤ 479px` | 3-column grid; seek bar moves to its own full-width row; tracklist hidden |
 
 Tested at 912px (Surface target), 700px, and 400px via browser preview. Figma file confirmed the target canvas is 912px wide.
+
+### Styling pass
+Follow-up polish, same session:
+- Active tab gets an orange 3px inset bottom border (box-shadow)
+- Cover image hides alt text when no image is loaded (color: transparent)
+- Player info spans full row height and vertically centers NOW PLAYING/title/artist
+- Tracklist title/artist max-width removed — uses full column width
+- Seek bar gap increased 0.5rem → 0.75rem for breathing room around timestamps
+
+### Status
+- ✅ Full audio copy — all 59 FLACs copied into `assets/uploads/`
+- ⬜ Styling pass — audit every element against the live site
+- ⬜ FLAC / browser testing — confirm Chrome, Edge, Safari; add MP3 fallback if needed
+- ⬜ Page content — replace placeholder copy with real Cunard content
+- ⬜ Video player (Plyr.js) — added after audio is solid
+
+---
+
+## 2026-05-08 — Session 3: Tracklist UX + Volume Control
+
+### What changed
+- **Tracklist switched from 3-column grid to single column** (1 track per line) — multi-column was confusing for the non-tech-savvy Cunard audience
+- **Scroll arrows** — elegant up/down chevrons to scroll the tracklist one track at a time; auto-disable at top/bottom; raw scrollbar hidden
+- **Volume control** — speaker icon + styled range slider added as a new grid column in the player bar; fill tracks position, persists across track changes; hidden on very small viewports
+- **Tab buttons switched to Arial** sans-serif (was serif, matching body copy — tabs needed clearer contrast)
+
+### Status
+- ✅ Full audio copy — all 59 FLACs copied into `assets/uploads/`
+- ✅ Single-column tracklist with scroll arrows
+- ✅ Volume control
+- ⬜ Styling pass — audit every element against the live site
+- ⬜ FLAC / browser testing — confirm Chrome, Edge, Safari; add MP3 fallback if needed
+- ⬜ Page content — replace placeholder copy with real Cunard content
+- ⬜ Video player (Plyr.js) — added after audio is solid
