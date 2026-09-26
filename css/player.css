@@ -626,6 +626,21 @@ button {
   margin: 0.5rem 0 2.5rem;
 }
 
+/* Divider between the intro and the first section: a short centred orange bar,
+   echoing the bars under the artist sub-heads */
+.content-inner > p:first-of-type + h2 {
+  margin-top: 0;
+}
+
+.content-inner > p:first-of-type + h2::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #ff6b35;
+  margin: 0 auto 2.5rem;
+}
+
 .content-inner .section-title {
   font-size: 2.25rem;
   text-align: center;
@@ -678,11 +693,6 @@ button {
   width: 100%;
   height: auto;
   border-radius: 2px;
-}
-
-.content-figure--logo {
-  margin: 3.5rem auto 0;
-  max-width: 520px;
 }
 
 .content-inner .back-to-top {

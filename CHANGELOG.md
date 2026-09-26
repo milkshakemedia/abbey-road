@@ -153,15 +153,22 @@ Follow-up polish, same session, found via wide-viewport testing:
 - **All 7 images** use files already in `assets/uploads/` (the 1024px WordPress sizes; logo and QR at full size). Descriptive alt text added.
 - **Cleanup vs. WordPress:** stripped block comments/classes, fixed stray spaces inside italic titles (e.g. *Aladdin Sane,* / *Ziggy Stardust*), "Bowers&Wilkins" → "Bowers & Wilkins".
 - **Studio links in the copy** ("Studio One / Two / Three") now switch the player to that tab and scroll up to it (`js/player.js`, bottom of file).
-- **New content styles** in `css/player.css` under "Page content — imported from the WordPress site": section titles with divider rule, orange artist sub-heads, full-width figures.
+- **New content styles** in `css/player.css` under "Page content — imported from the WordPress site": section titles with divider rule, artist sub-heads, full-width figures.
+- **Artist sub-heads restyled** (Elgar, Bowie, etc.): were orange — the link colour — so they looked clickable. Now white uppercase small caps (0.14em tracking) with a short **28px** orange bar *below* the name (`h3::after`). Tried 42px; 28px was more elegant — keep it.
+- **Entrance photo full width:** `Abbey_Road_New-Logo-scaled.png` is actually a photo of the studio's front entrance, not a logo. Removed the 520px logo-size cap so it spans the text column like the other photos; alt text corrected. (The header logo uses the same file and is unchanged.)
+- **Intro divider:** a short centred **28px orange bar** between the italic intro and "Cunard and our Musical Heritage", echoing the artist sub-head bars. Chose this over a full-width gray rule or a short gray line.
 
 ### Tested (opened directly via `file://`, Chrome)
 - All 54 tracks still play; tab switch still pauses outgoing audio
 - All 7 content images load at 912px (tablet), 1440px, and 400px; no horizontal scroll; no console errors
 - Studio links and Back to top work
 
+### Git
+On branch `session-5-page-content`, pushed — **not yet merged to `main`**.
+
 ### Status
 - ✅ Page content — real Cunard content in place
 - ⬜ Styling pass — compare content section side-by-side with the live WordPress page
 - ⬜ FLAC / browser testing on the actual tablet browser (Edge/Safari not yet tested)
+- ⬜ Merge `session-5-page-content` → `main` after the 2026-09-26 demo
 - ⬜ Video player (Plyr.js)
