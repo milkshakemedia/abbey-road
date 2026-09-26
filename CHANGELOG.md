@@ -142,3 +142,26 @@ Follow-up polish, same session, found via wide-viewport testing:
 - ⬜ FLAC / browser testing on the actual tablet browser; add MP3 fallback if needed
 - ⬜ Page content — replace placeholder copy with real Cunard content
 - ⬜ Video player (Plyr.js) — added after audio is solid
+
+---
+
+## 2026-09-25 — Session 5: Real Page Content (demo-ready)
+
+### What changed
+- **Placeholder copy replaced with the full "Crafted for Cunard" page** from the WordPress site — ~2,240 words across four sections: Cunard and our Musical Heritage (Elgar → The Beatles), Abbey Road Studios, Bowers & Wilkins, and Qobuz, ending with the QR codes and "Back to top".
+- **Source:** the WordPress database export `abbey-road/app/sql/local.sql` (page ID 12, the site's front page, last saved 2026-04-13). No WordPress login or running server needed. A Markdown copy plus full-size original images were also exported to `Abbey Road Cunard/wordpress-export/` on the laptop.
+- **All 7 images** use files already in `assets/uploads/` (the 1024px WordPress sizes; logo and QR at full size). Descriptive alt text added.
+- **Cleanup vs. WordPress:** stripped block comments/classes, fixed stray spaces inside italic titles (e.g. *Aladdin Sane,* / *Ziggy Stardust*), "Bowers&Wilkins" → "Bowers & Wilkins".
+- **Studio links in the copy** ("Studio One / Two / Three") now switch the player to that tab and scroll up to it (`js/player.js`, bottom of file).
+- **New content styles** in `css/player.css` under "Page content — imported from the WordPress site": section titles with divider rule, orange artist sub-heads, full-width figures.
+
+### Tested (opened directly via `file://`, Chrome)
+- All 54 tracks still play; tab switch still pauses outgoing audio
+- All 7 content images load at 912px (tablet), 1440px, and 400px; no horizontal scroll; no console errors
+- Studio links and Back to top work
+
+### Status
+- ✅ Page content — real Cunard content in place
+- ⬜ Styling pass — compare content section side-by-side with the live WordPress page
+- ⬜ FLAC / browser testing on the actual tablet browser (Edge/Safari not yet tested)
+- ⬜ Video player (Plyr.js)

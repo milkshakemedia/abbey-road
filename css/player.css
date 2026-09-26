@@ -609,6 +609,78 @@ button {
   line-height: 1.7;
 }
 
+/* Page content — imported from the WordPress site (Session 5) */
+.content-inner p {
+  margin-bottom: 1.25rem;
+}
+
+.content-inner p.center,
+.content-inner h2.center {
+  text-align: center;
+}
+
+.content-inner > p:first-of-type {
+  color: #cccccc;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.content-inner .section-title {
+  font-size: 2.25rem;
+  text-align: center;
+  margin: 3.5rem 0 1.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #444444;
+}
+
+.content-inner h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 2.25rem 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.content-inner h2 strong {
+  font-weight: 400;
+}
+
+.content-inner h3 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #ff6b35;
+  margin: 2rem 0 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+.content-inner em {
+  color: #dddddd;
+}
+
+.content-figure {
+  margin: 2rem 0;
+}
+
+.content-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.content-figure--logo {
+  margin: 3.5rem auto 0;
+  max-width: 520px;
+}
+
+.content-inner .back-to-top {
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 3rem;
+}
+
 a {
   color: #ff6b35;
   text-decoration: none;

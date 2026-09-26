@@ -472,3 +472,15 @@ async function init() {
 
 // Start once the DOM is ready
 document.addEventListener('DOMContentLoaded', init);
+
+// Links in the page copy like <a href="#studio-two"> switch to that studio's
+// player tab and scroll back up to it, instead of jumping to a missing anchor.
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="#studio-"]');
+  if (!link) return;
+  const tab = document.querySelector(`.tab-btn[data-tab="${link.getAttribute('href').slice(1)}"]`);
+  if (!tab) return;
+  e.preventDefault();
+  tab.click();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
