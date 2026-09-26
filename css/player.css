@@ -600,6 +600,7 @@ button {
   font-weight: 400;
   color: #ffffff;
   margin-bottom: 1rem;
+  font-variant: small-caps;
   letter-spacing: 0.05em;
 }
 
@@ -654,7 +655,8 @@ button {
   font-weight: 400;
   color: #ffffff;
   margin: 2.25rem 0 1rem;
-  letter-spacing: 0.02em;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
 }
 
 .content-inner h2 strong {

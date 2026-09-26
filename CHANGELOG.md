@@ -157,6 +157,8 @@ Follow-up polish, same session, found via wide-viewport testing:
 - **Artist sub-heads restyled** (Elgar, Bowie, etc.): were orange — the link colour — so they looked clickable. Now white uppercase small caps (0.14em tracking) with a short **28px** orange bar *below* the name (`h3::after`). Tried 42px; 28px was more elegant — keep it.
 - **Entrance photo full width:** `Abbey_Road_New-Logo-scaled.png` is actually a photo of the studio's front entrance, not a logo. Removed the 520px logo-size cap so it spans the text column like the other photos; alt text corrected. (The header logo uses the same file and is unchanged.)
 - **Intro divider:** a short centred **28px orange bar** between the italic intro and "Cunard and our Musical Heritage", echoing the artist sub-head bars. Chose this over a full-width gray rule or a short gray line.
+- **Small caps on all headings:** page title, section titles (Abbey Road Studios / Bowers & Wilkins / Qobuz) and section headings use `font-variant: small-caps` with slight letter-spacing.
+- **Headings converted to title case** so the small caps read consistently (e.g. "The home of music making" → "The Home of Music Making", "Try it Free" → "Try It Free"). Capitalisation only — no wording changed.
 
 ### Tested (opened directly via `file://`, Chrome)
 - All 54 tracks still play; tab switch still pauses outgoing audio
