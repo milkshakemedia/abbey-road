@@ -646,12 +646,24 @@ button {
   font-weight: 400;
 }
 
+/* Artist sub-heads: white small caps with a short orange rule below.
+   Kept out of the link colour so they don't read as clickable. */
 .content-inner h3 {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   font-weight: 400;
-  color: #ff6b35;
-  margin: 2rem 0 0.5rem;
-  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 2.5rem 0 0.8rem;
+}
+
+.content-inner h3::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #ff6b35;
+  margin-top: 0.55rem;
 }
 
 .content-inner em {
